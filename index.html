@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Deferred Rendering</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      canvas {
+        position: absolute;
+        cursor: grab;
+        display: block;
+        inset: 0;
+      }
+
+      canvas:active {
+        cursor: grabbing;
+      }
+
+      div {
+        pointer-events: none;
+        color: white;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+      }
+
+      label:nth-child(1),
+      label:nth-child(2) {
+        top: 16px;
+        position: relative;
+        align-self: flex-start;
+      }
+
+      label:nth-child(3),
+      label:nth-child(4) {
+        bottom: 16px;
+        position: relative;
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <div>
+      <label>Color</label>
+      <label>Position</label>
+      <label>Normal</label>
+      <label>Deferred (combined)</label>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
